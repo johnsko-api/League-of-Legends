@@ -57,3 +57,5 @@ def get_url(movie)
     url
   end
 end
+#######This code was given to me by a friend who retrieved it from github####
+#######will update to give credit to whoever made it when I find out#########

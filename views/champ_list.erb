@@ -2,6 +2,7 @@
 <h1>League of Legends</h1>
 <h2>Champions</h2>
 <% @champions.each do |champ| %>
-<%champ_name = champ[1]["name"] %>
-<ul><a href='/champions/<%=champ_name%>'><%=champ_name%></a></ul>
+<%champ_name = champ["name"] %>
+<%champ_id = champ["id"] %>
+<ul><a href='/champions/<%=champ_id%>'><%=champ_name%></a></ul>
 <% end %>

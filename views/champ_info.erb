@@ -1,12 +1,7 @@
-<% information = @champ_info.assoc(@champ_name) %>
-<% champ_name = information[1]["name"] %>
-<% champ_title = information[1]["title"] %>
-<% champ_lore = information[1]["lore"] %>
-
-<title>LOL - <%=champ_name%></title>
-<h1><%= champ_name %></h1>
-<ul><h2><%= champ_title %></h2></ul>
-<h5><%= champ_lore %></h5>
+<title>LOL - <%=@champ_info["name"]%></title>
+<h1><%= @champ_info["name"] %></h1>
+<ul><h2><%= @champ_info["title"] %></h2></ul>
+<h5><%= @champ_info["lore"] %></h5>
 
 <iframe width="420" height="315"
 src=<%=@url%>>
