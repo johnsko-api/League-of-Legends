@@ -1,8 +1,72 @@
-<title>LOL - <%=@champ_info["name"]%></title>
-<h1><%= @champ_info["name"] %></h1>
-<ul><h2><%= @champ_info["title"] %></h2></ul>
-<h5><%= @champ_info["lore"] %></h5>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOL - <%=@champ_info["name"]%></title>
+  <link rel="stylesheet" href="../css/foundation.css"/>
+  <link rel="stylesheet" href="../css/custom.css"/>
+  <script src="../js/vendor/modernizr.js"></script>
+</head>
+<body>
 
-<iframe width="420" height="315"
-src=<%=@url%>>
-</iframe>
+
+  <div id="bg">
+    <img src="http://cdn.leagueoflegends.com/game-info/1.1.9/images/champion/backdrop/bg-<%=@champ_info['name'].downcase.gsub(/\W/,"")%>.jpg" alt="">
+  </div>
+
+
+  <div class="row">
+    <div class="large-3 columns">
+    </div>
+    <div class="large-9 columns">
+      <ul class="right button-group">
+        <li><a href='/champions' class="button">Champions</a></li>
+        <li><a href="#" class="button">Link 2</a></li>
+        <li><a href="#" class="button">Link 3</a></li>
+        <li><a href="/" class="button">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="row">
+            <div class="large-6 columns">
+              <iframe width="470" height="352.5"
+              src=<%=@url%>>
+            </iframe><br>
+          </div>
+          <div class="large-6 columns">
+            <h3 class="show-for-small"><b><%="#{@champ_info["name"]}"%></b><hr/></h3>
+            <div class="panel">
+              <h4 class="hide-for-small"><b><%="#{@champ_info["name"]}: "%></b><%= "#{@champ_info["title"]}" %><hr/></h4>
+              <h5 class="subheader"><%= @champ_info["lore"] %></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <script>
+    document.write('<script src=js/vendor/' +
+    ('__proto__' in {} ? 'zepto' : 'jquery') +
+    '.js><\/script>')
+  </script>
+  <script src="../../js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
+  <script src="../js/vendor/jquery.js"></script>
+  <script src="../js/vendor/foundation.js"></script>
+  <script>
+    $(document).foundation();
+
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+  </script>
+</body>
+</html>

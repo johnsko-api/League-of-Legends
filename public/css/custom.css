@@ -1,0 +1,38 @@
+#bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
+
+.panel {
+  border-style: solid;
+  border-width: 1px;
+  border-color: #d8d8d8;
+  margin-bottom: 1.25rem;
+  padding: 1.25rem;
+  background: #7f7f7f;
+  background:rgba(0,0,0,0.5);
+  color: #333333; }
+
+h5.subheader {
+  color: white;
+}
+
+h4.hide-for-small {
+  color: white;
+}
+h3.show-for-small {
+  color:white;
+}
