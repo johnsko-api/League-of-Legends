@@ -26,6 +26,12 @@
   background:rgba(0,0,0,0.5);
   color: #333333; }
 
+.panel h1, .panel h2,
+.panel h3, .panel h4,
+.panel h5, .panel h6, p {
+  color: #fff;
+}
+
 h5.subheader {
   color: white;
 }
@@ -34,5 +40,14 @@ h4.hide-for-small {
   color: white;
 }
 h3.show-for-small {
-  color:white;
+  color: white;
+}
+
+a{
+  color: white;
+}
+
+.button {
+  background-color: rgba(0,0,0,0.5);
+  color: white;
 }
