@@ -1,0 +1,79 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LOL - Champions</title>
+  <link rel="stylesheet" href="/css/foundation.css"/>
+  <link rel="stylesheet" href="/css/custom.css"/>
+  <script src="/js/vendor/modernizr.js"></script>
+</head>
+<body>
+
+  <div id="bg">
+    <img src="http://wallpicshd.com/wp-content/uploads/2013/10/League-Of-Legends-Black-Background-Wallpapers.jpg" alt="">
+  </div>
+
+  <div class="row">
+    <div class="large-3 columns">
+    </div>
+    <div class="large-9 columns">
+      <ul class="right button-group">
+        <li><a href='/champions' class="button">Champions</a></li>
+        <li><a href="/" class="button">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1><a href="/champions" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000">Champions</a>
+
+          <ul id="hover1" class="f-dropdown" data-dropdown-content>
+            <li><a href="/champions/mages/">Class: Mage</a></li>
+            <li><a href="/champions/tanks">Class: Tank</a></li>
+            <li><a href="/champions/marksmans">Class: Marksman</a></li>
+            <li><a href="/champions/fighters">Class: Fighter</a></li>
+            <li><a href="/champions/assassins">Class: Assassin</a></li>
+            <li><a href="/champions/supports">Class: Support</a></li>
+          </ul></h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="large-12 columns">
+        <div align="center" class="panel">
+          <h3 class="header"><%= "Tanks" %></h3>
+          <% @champions.each do |champ| %>
+          <%champ_name = champ["key"] %>
+          <%champ_id = champ["id"] %>
+          <%champ_image = champ["image"]["full"] %>
+          <% if champ["tags"].first == "Tank" %>
+          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <script>
+        document.write('<script src=js/vendor/' +
+        ('__proto__' in {} ? 'zepto' : 'jquery') +
+        '.js><\/script>')
+      </script>
+      <script src="/js/vendor/jquery.js"></script>
+      <script src="js/foundation.min.js"></script>
+      <script>
+        $(document).foundation();
+      </script>
+      <script src="/js/vendor/jquery.js"></script>
+      <script src="/js/vendor/foundation.js"></script>
+      <script>
+        $(document).foundation();
+
+        var doc = document.documentElement;
+        doc.setAttribute('data-useragent', navigator.userAgent);
+      </script>
+    </body>
+    </html>
