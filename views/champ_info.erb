@@ -26,14 +26,13 @@
     </div>
   </div>
 
-
       <div class="row">
         <div class="large-12 columns">
           <div class="row">
             <div class="large-6 columns">
-              <iframe width="470" height="352.5"
-              src=<%=@url%>>
-            </iframe><br>
+              <div class="flex-video">
+                <iframe width="600" height="450" frameborder="0" allowfullscreen src=<%=@url%>></iframe>
+              </div>
           </div>
           <div class="large-6 columns">
             <h3 class="show-for-small"><b><%="#{@champ_info["name"]}"%></b><hr/></h3>
@@ -44,6 +43,9 @@
           </div>
         </div>
       </div>
+
+
+
 
 
     </div>

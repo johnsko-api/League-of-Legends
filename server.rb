@@ -1,3 +1,4 @@
+require 'pry'
 require 'dotenv'
 require 'sinatra'
 require 'net/http'
@@ -7,7 +8,9 @@ require './youtube.rb'
 Dotenv.load
 
 api_key = ENV["LEAGUE_API_KEY"]
-lol_api_response = URI("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=lore&api_key=#{api_key}")
+lol_api_response = URI("https://na.api.pvp.net/api/lol/static-data/na/v1.2/champion?champData=all&api_key=#{api_key}
+")
+
 response = Net::HTTP.get(lol_api_response)
 champ_data = JSON.parse(response)
 champions = champ_data["data"]
@@ -17,8 +20,8 @@ clean_data = Array.new
 champions.each do |key, value|
   clean_data << value
 end
-###########################
-###########################
+##########################
+##########################
 
 get '/' do
 erb :index
@@ -34,4 +37,22 @@ champ_id = params[:id].to_i
 @champ_info = clean_data.find {|f| f["id"] == champ_id}
 @url = get_url(@champ_info["name"])
   erb :champ_info
+end
+
+get '/champions/mages' do
+end
+
+get '/champions/supports' do
+end
+
+get '/champions/tanks' do
+end
+
+get '/champions/fighters' do
+end
+
+get '/champions/marksmans' do
+end
+
+get '/champions/assassins' do
 end
