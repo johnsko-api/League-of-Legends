@@ -47,87 +47,15 @@
     <div class="row">
       <div class="large-12 columns">
         <div align="center" class="panel">
-          <h3 class="header"><%= "Mages" %></h3>
           <% @champions.each do |champ| %>
           <%champ_name = champ["key"] %>
           <%champ_id = champ["id"] %>
           <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Mage" %>
           <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
           <% end %>
         </div>
       </div>
 
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Fighters" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Fighter" %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Tanks" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Tank" %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Assassins" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Assassin" %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Supports" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Support" %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Marksmans" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Marksman" %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
-        </div>
-      </div>
 
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>

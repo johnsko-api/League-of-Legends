@@ -50,30 +50,17 @@
           <%champ_name = champ["key"] %>
           <%champ_id = champ["id"] %>
           <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Tank" %>
+          <% if champ["tags"].include?("Tank") == true %>
           <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
           <% end %>
           <% end %>
         </div>
       </div>
 
-      <script>
-        document.write('<script src=js/vendor/' +
-        ('__proto__' in {} ? 'zepto' : 'jquery') +
-        '.js><\/script>')
-      </script>
       <script src="/js/vendor/jquery.js"></script>
-      <script src="js/foundation.min.js"></script>
+      <script src="/js/foundation.min.js"></script>
       <script>
-        $(document).foundation();
-      </script>
-      <script src="/js/vendor/jquery.js"></script>
-      <script src="/js/vendor/foundation.js"></script>
-      <script>
-        $(document).foundation();
-
-        var doc = document.documentElement;
-        doc.setAttribute('data-useragent', navigator.userAgent);
+      $(document).foundation();
       </script>
     </body>
     </html>

@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>LOL - Champions</title>
   <link rel="stylesheet" href="/css/foundation.css"/>
-  <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+  <link rel="stylesheet" href="/css/custom.css"/>
   <script src="/js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -42,6 +42,7 @@
       </div>
     </div>
 
+    <div class="row">
       <div class="large-12 columns">
         <div align="center" class="panel">
           <h3 class="header"><%= "Assassins" %></h3>
@@ -49,15 +50,15 @@
           <%champ_name = champ["key"] %>
           <%champ_id = champ["id"] %>
           <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].first == "Assassin" %>
+          <% if champ["tags"].include?("Assassin") == true %>
           <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
           <% end %>
           <% end %>
         </div>
       </div>
 
-      <script src="js/vendor/jquery.js"></script>
-      <script src="js/foundation.min.js"></script>
+      <script src="/js/vendor/jquery.js"></script>
+      <script src="/js/foundation.min.js"></script>
       <script>
         $(document).foundation();
       </script>
