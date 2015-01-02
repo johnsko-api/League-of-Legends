@@ -44,15 +44,19 @@
 
 
 
-    <div class="row">
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
+      <div class="row">
+        <div class="large-12 columns">
+            <% @champions.each do |champ| %>
+            <%champ_name = champ["name"] %>
+            <%champ_id = champ["id"] %>
+            <%champ_image = champ["image"]["full"] %>
+            <div class="panel" align="center">
+              <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
+              <div class="body" align="center">
+                <%= champ_name %>
+              </div>
+            </div>
+            <% end %>
         </div>
       </div>
 
