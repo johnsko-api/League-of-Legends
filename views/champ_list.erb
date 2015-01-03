@@ -5,6 +5,8 @@
   <title>LOL - Champions</title>
   <link rel="stylesheet" href="/css/foundation.css"/>
   <link rel="stylesheet" type="text/css" href="/css/custom.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/champlist.css"/>
+
   <script src="/js/vendor/modernizr.js"></script>
 </head>
 <body>
@@ -44,22 +46,22 @@
 
 
 
-      <div class="row">
-        <div class="large-12 columns">
-            <% @champions.each do |champ| %>
-            <%champ_name = champ["name"] %>
-            <%champ_id = champ["id"] %>
-            <%champ_image = champ["image"]["full"] %>
-            <div class="panel" align="center">
-              <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-              <div class="body" align="center">
-                <%= champ_name %>
-              </div>
-            </div>
-            <% end %>
+    <div class="row">
+      <div class="large-3 small-6 columns">
+        <div class="overlay-container">
+          <% @champions.each do |champ| %>
+          <%champ_name = champ["name"] %>
+          <%champ_id = champ["id"] %>
+          <%champ_image = champ["image"]["full"] %>
+          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
+          <div class="overlay">
+            <span>Overlay text</span>
+          </div>
         </div>
+        <h6 class="panel"><strong><%= champ_name %></strong></h6>
+        <% end %>
       </div>
-
+    </div>
 
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
