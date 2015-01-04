@@ -27,45 +27,21 @@ get '/' do
 erb :index
 end
 
+get '/champions/:id' do
+  champ_id = params[:id].to_i
+  @champ_info = clean_data.find {|f| f["id"] == champ_id}
+  @url = get_url(@champ_info["name"])
+  erb :champ_info
+end
+
 get '/champions' do
 @champions = clean_data
 erb :champ_list
 end
 
 
-get '/champions/mages/' do
+get '/champions/:role' do
   @champions = clean_data
-  erb :mages
-end
-
-get '/champions/supports' do
-  @champions = clean_data
-  erb :supports
-end
-
-get '/champions/tanks' do
-  @champions = clean_data
-  erb :tanks
-end
-
-get '/champions/fighters' do
-  @champions = clean_data
-  erb :fighters
-end
-
-get '/champions/marksmans' do
-  @champions = clean_data
-  erb :marksmans
-end
-
-get '/champions/assassins' do
-  @champions = clean_data
-  erb :assassins
-end
-
-get '/champions/:id' do
-  champ_id = params[:id].to_i
-  @champ_info = clean_data.find {|f| f["id"] == champ_id}
-  @url = get_url(@champ_info["name"])
-  erb :champ_info
+  @role = params[:role]
+  erb :categories
 end

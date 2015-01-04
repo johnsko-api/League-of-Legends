@@ -28,39 +28,42 @@
   <div class="row">
     <div class="large-12 columns">
       <div class="panel">
-        <h1><a href="/champions" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000">Champions</a>
+        <h1><a href="/champions" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000"><%= @role.capitalize%></a>
 
           <ul id="hover1" class="f-dropdown" data-dropdown-content>
-            <li><a href="/champions/mages/">Class: Mage</a></li>
-            <li><a href="/champions/tanks">Class: Tank</a></li>
-            <li><a href="/champions/marksmans">Class: Marksman</a></li>
-            <li><a href="/champions/fighters">Class: Fighter</a></li>
-            <li><a href="/champions/assassins">Class: Assassin</a></li>
-            <li><a href="/champions/supports">Class: Support</a></li>
+            <li><a href="/champions/mage">Class: Mage</a></li>
+            <li><a href="/champions/tank">Class: Tank</a></li>
+            <li><a href="/champions/marksman">Class: Marksman</a></li>
+            <li><a href="/champions/fighter">Class: Fighter</a></li>
+            <li><a href="/champions/assassin">Class: Assassin</a></li>
+            <li><a href="/champions/support">Class: Support</a></li>
           </ul></h1>
         </div>
       </div>
     </div>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <div align="center" class="panel">
-          <h3 class="header"><%= "Marksmans" %></h3>
-          <% @champions.each do |champ| %>
-          <%champ_name = champ["key"] %>
-          <%champ_id = champ["id"] %>
-          <%champ_image = champ["image"]["full"] %>
-          <% if champ["tags"].include?("Marksman") == true %>
-          <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <% end %>
-          <% end %>
+
+      <div class="row">
+        <% @champions.each do |champ| %>
+        <%champ_name = champ["name"] %>
+        <%champ_id = champ["id"] %>
+        <%champ_image = champ["image"]["full"] %>
+        <% if champ["tags"].include?(@role.capitalize) == true %>
+        <div class="large-2 small-6 columns">
+          <div class="panel" align="center">
+            <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
+            <h5><%=champ_name%></h5>
+          </div>
         </div>
+        <% end %>
+        <% end %>
       </div>
+
 
       <script src="/js/vendor/jquery.js"></script>
       <script src="/js/foundation.min.js"></script>
       <script>
-      $(document).foundation();
+        $(document).foundation();
       </script>
     </body>
     </html>

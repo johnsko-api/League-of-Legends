@@ -26,47 +26,46 @@
     </div>
   </div>
 
+  <div class="row">
+    <div class="large-12 columns">
       <div class="row">
-        <div class="large-12 columns">
-          <div class="row">
-            <div class="large-6 columns">
-              <div class="flex-video">
-                <iframe width="600" height="450" frameborder="0" allowfullscreen src=<%=@url%>></iframe>
-              </div>
+        <div class="large-6 columns">
+          <div class="flex-video">
+            <iframe width="600" height="450" frameborder="0" allowfullscreen src=<%=@url%>></iframe>
           </div>
-          <div class="large-6 columns">
-            <h3 class="show-for-small"><b><%="#{@champ_info["name"]}"%></b><hr/></h3>
-            <div class="panel">
-              <h4 class="hide-for-small"><b><%="#{@champ_info["name"]}: "%></b><%= "#{@champ_info["title"]}" %><hr/></h4>
-              <h5 class="subheader"><%= @champ_info["lore"] %></h5>
-            </div>
+        </div>
+        <div class="large-6 columns">
+          <h3 class="show-for-small"><b><%="#{@champ_info["name"]}"%></b><hr/></h3>
+          <div class="panel">
+            <h4 class="hide-for-small"><b><%="#{@champ_info["name"]}: "%></b><%= "#{@champ_info["title"]}" %><hr/></h4>
+            <h5 class="subheader"><%= @champ_info["lore"] %></h5>
           </div>
         </div>
       </div>
-
-
-
-
-
     </div>
-  </div>
-  <script>
-    document.write('<script src=js/vendor/' +
-    ('__proto__' in {} ? 'zepto' : 'jquery') +
-    '.js><\/script>')
-  </script>
-  <script src="../../js/vendor/jquery.js"></script>
-  <script src="js/foundation.min.js"></script>
-  <script>
-    $(document).foundation();
-  </script>
-  <script src="../js/vendor/jquery.js"></script>
-  <script src="../js/vendor/foundation.js"></script>
-  <script>
-    $(document).foundation();
 
-    var doc = document.documentElement;
-    doc.setAttribute('data-useragent', navigator.userAgent);
-  </script>
+
+
+
+
+  </div>
+</div>
+<script>
+  document.write('<script src=js/vendor/' +
+  ('__proto__' in {} ? 'zepto' : 'jquery') +
+  '.js><\/script>')
+</script>
+<script src="../../js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+  $(document).foundation();
+</script>
+<script src="../js/vendor/jquery.js"></script>
+<script src="../js/vendor/foundation.js"></script>
+<script>
+  $(document).foundation();
+  var doc = document.documentElement;
+  doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
 </body>
 </html>
