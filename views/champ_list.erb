@@ -45,23 +45,21 @@
     </div>
 
 
-
-    <div class="row">
-      <div class="large-3 small-6 columns">
-        <div class="overlay-container">
+      <div class="row">
           <% @champions.each do |champ| %>
           <%champ_name = champ["name"] %>
           <%champ_id = champ["id"] %>
           <%champ_image = champ["image"]["full"] %>
+        <div class="large-2 small-6 columns">
+          <div class="panel" align="center">
           <a href='/champions/<%=champ_id%>'><img src="http://ddragon.leagueoflegends.com/cdn/4.21.5/img/champion/<%=champ_image%>"></a>
-          <div class="overlay">
-            <span>Overlay text</span>
+            <h5><%=champ_name%></h5>
           </div>
         </div>
-        <h6 class="panel"><strong><%= champ_name %></strong></h6>
-        <% end %>
+          <% end %>
       </div>
-    </div>
+
+
 
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
