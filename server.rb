@@ -27,6 +27,7 @@ get '/' do
 erb :index
 end
 
+
 get '/champions/:id' do
   champ_id = params[:id].to_i
   @champ_info = clean_data.find {|f| f["id"] == champ_id}
@@ -34,14 +35,13 @@ get '/champions/:id' do
   erb :champ_info
 end
 
-get '/champions' do
-@champions = clean_data
-erb :champ_list
-end
-
-
-get '/champions/:role' do
+get '/champions/:role/' do
   @champions = clean_data
   @role = params[:role]
   erb :categories
+end
+
+get '/champions' do
+@champions = clean_data
+erb :champ_list
 end
