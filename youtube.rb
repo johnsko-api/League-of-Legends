@@ -24,9 +24,9 @@ def get_service
   return client, youtube
 end
 
-def get_url(movie)
+def get_url(clip)
   opts = Trollop::options do
-    opt :q, '#{movie}', :type => String, :default => movie + 'pentakill'
+    opt :q, '#{clip}', :type => String, :default => clip + 'champion spotlight'
     opt :max_results, 'Max results', :type => :int, :default => 1
   end
 
